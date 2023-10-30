@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+
+    <meta charset="UTF-8">
+    <title>ask</title>
+    <!-- Bootstrap -->
+
+    <link href="../static/css/bootstrap.css" rel="stylesheet">
+    <link href="../static/css/main.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="sticky-footer-navbar.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100">
+
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../static/img/ava.jpg" alt="" class="logo">
+                Vopros & Otvet
+            </a>
+
+
+            <form class="d-flex col-4">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+
+            <div class="user row">
+                <div class="col-4 d-flex justify-content-center align-items-center">
+                    <a class="user-profile-img" href="#">
+                        <img src="../static/img/ava.jpg" alt="" class="avatar">
+                    </a>
+
+                </div>
+                <div class="col-8">
+                    <div class="user-name">
+                        <a class="user-profile-text" href="#">
+                            SER0021
+                        </a>
+                    </div>
+                    <div>
+                        <a class="setting-button" href="#">setting</a>
+                        <a class="logout-button" href="#">logout</a>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <!-- begin content -->
+                <h2 style="margin-bottom: 40px;">New Question</h2>
+                <div class="row">
+                    <div class="col-2">
+                        <div style="margin-bottom: 30px;">
+                            Title
+                        </div>
+                        <div style="margin-bottom: 280px;">
+                            Text
+                        </div>
+                        <div>
+                            Tags
+                        </div>
+
+                    </div>
+                    <div class="col-10">
+                            <textarea style="margin-bottom: 20px;"
+                                      name="textarea-title"
+                                      rows="1"
+                                      cols="50"
+                                      placeholder="Write title here. (Max length 30)"
+                                      maxlength="30"></textarea>
+                        <textarea style="margin-bottom: 45px;"
+                                name="textarea-question"
+                                rows="10"
+                                cols="50"
+                                placeholder="Write your question here. (Max length 200)"
+                                maxlength="200"></textarea>
+                        <textarea
+                                name="textarea-tags"
+                                rows="1"
+                                cols="50"
+                                placeholder="Write tags here. (Max length 30)"
+                                maxlength="30"></textarea>
+
+                        <div>
+                            <button class="button-ask">ASK!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-4">
+                <div class="right-panel">
+                    <div class="row">
+                        <h2>Popular tags</h2>
+                        <div class="tags">
+                            <span class="badge bg-primary">Python</span>
+                            <span class="badge bg-secondary">CSS</span>
+                            <span class="badge bg-danger">Django</span>
+                            <span class="badge bg-success">VK</span>
+                            <span class="badge bg-dark">Swift</span>
+                        </div>
+                        <br/>
+                        <h2>Best members</h2>
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="">Mr.Freeman</a></li>
+                            <li class="list-group-item"><a href="">Second item</a></li>
+                            <li class="list-group-item"><a href="">Third item</a></li>
+                            <li class="list-group-item"><a href="">Fouth item</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+
+    </div>
+</footer>
+
+
+<script src="../static/js/bootstrap.js"></script>
+
+
+</body>
+</html>

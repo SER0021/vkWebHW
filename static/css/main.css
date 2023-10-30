@@ -1,0 +1,157 @@
+main > .container {
+    padding: 80px 15px 0;
+    margin: 20px;
+}
+
+
+
+.question {
+    border: 1px solid grey;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.question-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.question-title {
+    font-size: 20px;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+.answers-item {
+    border: 1px solid grey;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.right-panel {
+   margin-top: 68px;
+   padding-left: 100px;
+}
+
+.tags {
+    max-width: 100px;
+    padding-bottom: 25px;
+}
+
+.list-group {
+    margin-left: 12px;
+    max-width: 250px;
+}
+
+
+.like-button {
+    margin: 10px;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+
+}
+
+.like-button:hover {
+    background-color: #00cc5f; /* Измените цвет, если это не подходит */
+}
+
+.dislike-button {
+    margin: 10px;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+
+}
+
+.dislike-button:hover {
+    background-color: #ff6961; /* Измените цвет, если это не подходит */
+}
+
+.logo {
+    margin: 0px 10px;
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 10px;
+
+
+}
+
+.avatar {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(161, 0, 219);
+}
+
+.avatar:hover {
+    filter: brightness(70%);
+    border-color: gray;
+}
+
+.user-profile-text {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.user-profile-text:hover {
+    color: gray;
+}
+.setting-button {
+    text-decoration: none;
+    padding: 5px;
+}
+.logout-button {
+    text-decoration: none;
+}
+
+textarea {
+    resize: none;
+}
+
+.button-ask{
+    margin-top: 20px;
+}
+/* закрепить сам вопрос поверх ответов
+.question-container {
+    padding-top: 10px;
+    position: sticky;
+    top: 70px;
+    background-color: white;
+    z-index: 1;
+    border: 1px solid grey;
+}
+*/
+
+.setting-image {
+    margin: 30px;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.file-path{
+    margin-left: 130px;
+}
+
+.save-button{
+    margin-left: 130px;
+    margin-top: 50px;
+}
+
+.login-label{
+    margin-bottom: 20px;
+}
+
+.error-login{
+    margin-bottom: 20px;
+    color: red;
+}
+
+
+
