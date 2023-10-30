@@ -1,0 +1,22 @@
+{% load static %}
+
+<div class="row question">
+    <div class="col-3">
+        <img src="{% static '/img/ava.jpg' %}" alt="" class="question-image">
+    </div>
+    <div class="col-9">
+        <div class="question-title"><a href="{% url 'question' question_id=question.id %}">{{ question.title }}</a></div>
+        <div class="question-text">{{ question.content }}</div>
+        <div class="d-flex justify-content-between align-items-center" style="margin-top: 15px;">
+            <div class="d-flex justify-content-between align-items-center">
+                <h>10</h>
+                <button class="like-button">&#128077;</button>
+                <button class="dislike-button">&#128078;</button>
+                <div class="question-answer"><a href="">answer (3)</a></div>
+            </div>
+            <div class="question-tags">
+                <h>Tags: <a href="">CSS</a> <a href="">JS</a></h>
+            </div>
+        </div>
+    </div>
+</div>

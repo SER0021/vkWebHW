@@ -19,7 +19,7 @@
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{% url 'index' %}">
                 <img src="../static/img/ava.jpg" alt="" class="logo">
                 Vopros & Otvet
             </a>
@@ -72,14 +72,8 @@
                         </div>
                     </div>
                     <div class="col-9">
-                        <div class="question-title"><a href="">Что такое Lorem Ipsum?</a></div>
-                        <div class="question-text">Lorem Ipsum - это текст-"рыба", часто используемый в печати и
-                            вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала
-                            XVI
-                            века. В то время некий безымянный печатник создал большую коллекцию размеров и форм
-                            шрифтов,
-                            используя Lorem Ipsum для распечатки образцов.
-                        </div>
+                        <div class="question-title"><a href="">{{ question.title }}</a></div>
+                        <div class="question-text">{{ question.content }}</div>
                         <div class="d-flex justify-content-between align-items-center" style="margin-top: 15px;">
 
                             <div class="question-tags">

@@ -1,13 +1,15 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en" class="h-100">
 <head>
 
     <meta charset="UTF-8">
-    <title>base</title>
+    <title>index</title>
     <!-- Bootstrap -->
 
-    <link href="../static/css/bootstrap.css" rel="stylesheet">
-    <link href="../static/css/main.css" rel="stylesheet">
+    <link href="{% static '/css/bootstrap.css' %}" rel="stylesheet">
+    <link href=" {% static '/css/main.css' %}" rel="stylesheet">
 
 
     <!-- Custom styles for this template -->
@@ -19,7 +21,7 @@
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{% url 'index' %}">
                 <img src="../static/img/ava.jpg" alt="" class="logo">
                 Vopros & Otvet
             </a>
@@ -62,6 +64,9 @@
     <div class="container">
         <div class="row">
             <div class="col-8">
+
+                {% block content %}
+                {% endblock %}
 
             </div>
 
@@ -107,7 +112,7 @@
 </footer>
 
 
-<script src="../static/js/bootstrap.js"></script>
+<script src=" {% static '/js/bootstrap.js' %}"></script>
 
 
 </body>
