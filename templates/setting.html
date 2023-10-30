@@ -1,0 +1,65 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h2>Settings</h2>
+<div>
+                    <span class="Login">
+                    Login
+                    <textarea
+                            name="textarea-title"
+                            rows="1"
+                            cols="30"
+                            placeholder="Enter login here. (Max length 20)"
+                            maxlength="30"
+                            style="vertical-align: middle; margin-left: 90px;"></textarea>
+                </span>
+</div>
+<div style="margin-top: 20px;">
+                    <span class="Email">
+                    Email
+                    <textarea
+                            name="textarea-title"
+                            rows="1"
+                            cols="30"
+                            placeholder="Enter login here. (Max length 20)"
+                            maxlength="30"
+                            style="vertical-align: middle; margin-left: 90px;"></textarea>
+                </span>
+</div>
+<div style="margin-top: 20px;">
+                    <span class="NickName">
+                    NickName
+                    <textarea
+                            name="textarea-title"
+                            rows="1"
+                            cols="30"
+                            placeholder="Enter login here. (Max length 20)"
+                            maxlength="30"
+                            style="vertical-align: middle; margin-left: 54px;"></textarea>
+                </span>
+</div>
+<div style="margin-top: 20px;">
+                        <span class="Upload-avatar">
+                    Upload avatar
+                    <img src="../static/img/ava.jpg" alt="" class="setting-image">
+                </span>
+</div>
+<div class="file-path">
+                    <span>
+                        <textarea
+                                name="file-path-title"
+                                rows="1"
+                                cols="20"
+                                placeholder="C:\\..."
+                                style="vertical-align: middle;"></textarea>
+                        <button>choose</button>
+                    </span>
+</div>
+<div>
+    <button class="save-button">save</button>
+</div>
+
+{% endblock %}
