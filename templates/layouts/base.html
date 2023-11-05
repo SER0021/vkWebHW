@@ -5,7 +5,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>index</title>
+    <title>Vopros&Otvet</title>
     <!-- Bootstrap -->
 
     <link href="{% static '/css/bootstrap.css' %}" rel="stylesheet">
@@ -33,28 +33,9 @@
                 <button class="btn btn-danger" type="submit" style="margin-left: 10px;"><a href="{% url 'ask' %}" style="color: inherit;">ASK!</a></button>
             </form>
 
-            <div class="user row">
-                <div class="col-4 d-flex justify-content-center align-items-center">
-                    <a class="user-profile-img" href="#">
-                        <img src="{% static '/img/ava.jpg'%}" alt="" class="avatar">
-                    </a>
 
-                </div>
-                <div class="col-8">
-                    <div class="user-name">
-                        <a class="user-profile-text" href="#">
-                            SER0021
-                        </a>
-                    </div>
-                    <div>
-                        <a class="setting-button" href="{% url 'setting' %}">setting</a>
-                        <a class="logout-button" href="#">logout</a>
-                    </div>
-
-
-                </div>
-
-            </div>
+<!--                {% include 'components/sign-up-item.html' %}-->
+                {% include 'components/log-in-success-item.html' %}
 
         </div>
     </nav>

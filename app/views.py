@@ -35,6 +35,9 @@ def index(request):
     page = request.GET.get('page', 1)
     return render(request, 'index.html', {'questions': paginate(QUESTIONS, page)})
 
+def hot(request):
+    page = request.GET.get('page', 1)
+    return render(request, 'hot.html', {'questions': paginate(QUESTIONS, page)})
 
 def question(request, question_id):
     item = QUESTIONS[question_id]
@@ -44,10 +47,16 @@ def ask(request):
     return render(request, 'ask.html')
 
 def tag(request, tag_title):
-    #item = TAGS.objects.get(title=tag_title)
     item = next((tag for tag in TAGS if tag['title'] == tag_title), None)
     page = request.GET.get('page', 1)
     return render(request, 'tag.html', {'tag': item, 'questions': paginate(QUESTIONS, page)})
 
 def setting(request):
     return render(request, 'setting.html')
+
+def singup(request):
+    return render(request, 'signup.html')
+
+def login(request):
+    return render(request, 'login.html')
+

@@ -4,14 +4,13 @@
 
 {% block content %}
 
-<h2>Tag: {{ tag.title }}</h2>
+<h1>Hot questions</h1>
 
 {% for question in questions %}
 
 {% include 'components/question-item.html' %}
 
 {% endfor%}
-
 
 <footer class="footer mt-auto py-3 bg-light">
     <div class="container">
@@ -38,5 +37,3 @@
 </footer>
 
 {% endblock %}
-
-

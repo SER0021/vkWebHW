@@ -12,10 +12,10 @@
                 <h>10</h>
                 <button class="like-button">&#128077;</button>
                 <button class="dislike-button">&#128078;</button>
-                <div class="question-answer"><a href="">answer (3)</a></div>
+                <div class="question-answer"><a href="{% url 'question' question_id=question.id %}">answer (1)</a></div>
             </div>
             <div class="question-tags">
-                <h>Tags: <a href="">CSS</a> <a href="">JS</a></h>
+                <h>Tags: <a href="{% url 'tag' tag_title='CSS' %}">CSS</a> <a href="{% url 'tag' tag_title='Django' %}">Django</a></h>
             </div>
         </div>
     </div>
