@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from django.core.paginator import Paginator
-
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 QUESTIONS = [
         {
@@ -29,7 +28,21 @@ TAGS = [
 
 def paginate(objects, page, per_page=3):
     paginator = Paginator(objects, per_page)
-    return paginator.page(page)
+    try:
+        paginated_objects = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        paginated_objects = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range, deliver last page of results.
+        paginated_objects = paginator.page(paginator.num_pages)
+    return paginated_objects
+
+
+def render_paginated(request, template_name, data):
+    page = request.GET.get('page', 1)
+    paginated_data = paginate(data, page)
+    return render(request, template_name, {'questions': paginated_data})
 
 def index(request):
     page = request.GET.get('page', 1)
