@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.core.paginator import Paginator
+
 
 QUESTIONS = [
         {
@@ -28,29 +29,15 @@ TAGS = [
 
 def paginate(objects, page, per_page=3):
     paginator = Paginator(objects, per_page)
-    try:
-        paginated_objects = paginator.page(page)
-    except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
-        paginated_objects = paginator.page(1)
-    except EmptyPage:
-        # If page is out of range, deliver last page of results.
-        paginated_objects = paginator.page(paginator.num_pages)
-    return paginated_objects
-
-
-def render_paginated(request, template_name, data):
-    page = request.GET.get('page', 1)
-    paginated_data = paginate(data, page)
-    return render(request, template_name, {'questions': paginated_data})
-
+    return paginator.page(page)
 
 def index(request):
-    return render_paginated(request, 'index.html', QUESTIONS)
-
+    page = request.GET.get('page', 1)
+    return render(request, 'index.html', {'questions': paginate(QUESTIONS, page)})
 
 def hot(request):
-    return render_paginated(request, 'hot.html', QUESTIONS)
+    page = request.GET.get('page', 1)
+    return render(request, 'hot.html', {'questions': paginate(QUESTIONS, page)})
 
 def question(request, question_id):
     item = QUESTIONS[question_id]
@@ -61,7 +48,9 @@ def ask(request):
 
 def tag(request, tag_title):
     item = next((tag for tag in TAGS if tag['title'] == tag_title), None)
-    return render_paginated(request, 'tag.html', QUESTIONS)
+    page = request.GET.get('page', 1)
+    return render(request, 'tag.html', {'tag': item, 'questions': paginate(QUESTIONS, page)})
+
 def setting(request):
     return render(request, 'setting.html')
 
@@ -70,4 +59,3 @@ def singup(request):
 
 def login(request):
     return render(request, 'login.html')
-
