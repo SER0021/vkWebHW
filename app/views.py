@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
+from .models import Question
+
 QUESTIONS = [
         {
             'id': i,
@@ -40,11 +42,13 @@ def paginate(objects, page, per_page=3):
 
 def index(request):
     page = request.GET.get('page', 1)
-    return render(request, 'index.html', {'questions': paginate(QUESTIONS, page)})
+    questions = Question.objects.all()
+    return render(request, 'index.html', {'questions': paginate(questions, page)})
 
 def hot(request):
     page = request.GET.get('page', 1)
-    return render(request, 'hot.html', {'questions': paginate(QUESTIONS, page)})
+    hot = Question.objects.hotQuestions()
+    return render(request, 'hot.html', {'questions': paginate(hot, page)})
 
 def question(request, question_id):
     item = QUESTIONS[question_id]

@@ -9,9 +9,13 @@
     {% endif %}
 
     {% for page_number in questions.paginator.page_range %}
-    <li class="page-item {% if page_number == questions.number %}active{% endif %}">
-      <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
-    </li>
+      {% if page_number == questions.number %}
+        <li class="page-item active"><span class="page-link">{{ page_number }}</span></li>
+      {% elif page_number > questions.number|add:"-1" and page_number < questions.number|add:"4" %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+        </li>
+      {% endif %}
     {% endfor %}
 
     {% if questions.has_next %}

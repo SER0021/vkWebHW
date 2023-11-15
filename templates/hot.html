@@ -4,7 +4,10 @@
 
 {% block content %}
 
-<h1>Hot questions</h1>
+<div>
+    <h1>Hot questions</h1>
+    <h4><a href="{% url 'index' %}">New Questions</a></h4>
+</div>
 
 {% for question in questions %}
 
