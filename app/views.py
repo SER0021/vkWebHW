@@ -44,13 +44,13 @@ def render_paginated(request, template_name, data):
     paginated_data = paginate(data, page)
     return render(request, template_name, {'questions': paginated_data})
 
+
 def index(request):
-    page = request.GET.get('page', 1)
-    return render(request, 'index.html', {'questions': paginate(QUESTIONS, page)})
+    return render_paginated(request, 'index.html', QUESTIONS)
+
 
 def hot(request):
-    page = request.GET.get('page', 1)
-    return render(request, 'hot.html', {'questions': paginate(QUESTIONS, page)})
+    return render_paginated(request, 'hot.html', QUESTIONS)
 
 def question(request, question_id):
     item = QUESTIONS[question_id]
@@ -61,9 +61,7 @@ def ask(request):
 
 def tag(request, tag_title):
     item = next((tag for tag in TAGS if tag['title'] == tag_title), None)
-    page = request.GET.get('page', 1)
-    return render(request, 'tag.html', {'tag': item, 'questions': paginate(QUESTIONS, page)})
-
+    return render_paginated(request, 'tag.html', QUESTIONS)
 def setting(request):
     return render(request, 'setting.html')
 
